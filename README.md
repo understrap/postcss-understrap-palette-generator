@@ -1,27 +1,17 @@
 # PostCSS Understrap Palette Generator
 
-[PostCSS] plugin to generate a json file.
+[PostCSS] plugin to generate a json file of your Bootstrap color variables. This is a dependency for the [Understrap] open source WordPress theme framework. We're then digesting this JSON file to populate Gutenberg with theme colors that actually match your designs.
 
 [PostCSS]: https://github.com/postcss/postcss
 
-```css
-.foo {
-    /* Input example */
-}
-```
-
-```css
-.foo {
-  /* Output example */
-}
-```
+[Understrap]: https://github.com/understrap/understrap
 
 ## Usage
 
 **Step 1:** Install plugin:
 
 ```sh
-npm install --save-dev postcss postcss-understrap-palette-generator
+npm install --save-dev https://github.com/bacoords/postcss-understrap-palette-generator
 ```
 
 **Step 2:** Check you project for existed PostCSS config: `postcss.config.js`
@@ -36,8 +26,8 @@ and set this plugin in settings.
 ```diff
 module.exports = {
   plugins: [
-+   require('postcss-understrap-palette-generator'),
-    require('autoprefixer')
+    autoprefixer : {}
++   'postcss-understrap-palette-generator':{},
   ]
 }
 ```
