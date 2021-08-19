@@ -1,3 +1,5 @@
+const fs = require( 'fs' );
+
 module.exports = (opts = { }) => {
 
   // Work with options here
