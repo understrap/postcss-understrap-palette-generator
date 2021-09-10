@@ -32,4 +32,39 @@ module.exports = {
 }
 ```
 
+## Options
+
+### defaults: object
+Pass default values for variables that may or may not be in your Bootstrap's variables. They'll get added to the JSON file with the value you set. However, if they exist in your CSS and they're in the `colors` option below, they may get overwritten by the value in your CSS. Example:
+
+```diff
+module.exports = {
+  plugins: [
+    autoprefixer : {}
+    'postcss-understrap-palette-generator':{
++     defaults: {
++       "--magenta": "#ff00ff"
++     }
+    },
+  ]
+}
+```
+
+### colors: array
+An array of color variables you explicitly want the tool to parse from your CSS file. The difference from `defaults` is that these are NOT added to the final output UNLESS a value is found in your CSS. Also, if you don't include a variable in this array, it does not get parsed by the tool at all.
+
+```diff
+module.exports = {
+  plugins: [
+    autoprefixer : {}
+    'postcss-understrap-palette-generator':{
++     colors: [
++       "--primary"
++     ]
+    },
+  ]
+}
+```
+
+
 [official docs]: https://github.com/postcss/postcss#usage
