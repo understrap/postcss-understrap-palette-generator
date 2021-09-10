@@ -8,7 +8,7 @@ module.exports = (opts = { }) => {
     postcssPlugin: 'postcss-understrap-palette-generator',
 	prepare (result) {
 		let colorJson = {};
-		const colors = [
+		let colors = opts.colors || [
 			"--blue",
 			"--indigo",
 			"--purple",
