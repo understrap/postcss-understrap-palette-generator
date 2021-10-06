@@ -30,7 +30,9 @@ module.exports = (opts = { }) => {
 				}
 			},
 			OnceExit () {
-				fs.writeFile('inc/editor-color-palette.json', JSON.stringify(colorJson), function(){});
+        if (!(Object.keys(colorJson).length === 0)){
+          fs.writeFile('inc/editor-color-palette.json', JSON.stringify(colorJson), function(){});
+        }
 				return colorJson;
 			}
 		}
