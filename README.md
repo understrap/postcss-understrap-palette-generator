@@ -66,5 +66,18 @@ module.exports = {
 }
 ```
 
+### output: string
+The name of the JSON file you explicitly want the tool to save the parsed colors to. Defaults to `inc/editor-color-palette.json`.
+
+```diff
+module.exports = {
+  plugins: [
+    autoprefixer : {}
+    'postcss-understrap-palette-generator':{
++     output: 'example/example-file.json'
+    },
+  ]
+}
+```
 
 [official docs]: https://github.com/postcss/postcss#usage
